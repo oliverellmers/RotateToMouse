@@ -35,7 +35,7 @@ function drawBoxes(){
   translate(width/2 + boxSize/2, height/2 + boxSize/2);
 
   push();
-  pointLight(200, 200, 200, p1.x, -p1.y + height/2, p1.z);
+  pointLight(200, 200, 200, p1.x - width/2, -p1.y + height/2, p1.z);
   pop();
 
   
