@@ -5,7 +5,6 @@ var isMousePressed = false;
 
 
 function setup() {
-  //var boxes = createCanvas(windowWidth, windowHeight, WEBGL);
   createCanvas(windowWidth, windowHeight, WEBGL);
 
   var fov = 60 / 180 * PI;
@@ -15,7 +14,6 @@ function setup() {
   p1 = createVector(-200, 100, -200);
   p2 = createVector(200, 100, -500);
 
-  //boxes.parent("boxes");
 }
 
 function draw() {
@@ -24,36 +22,25 @@ function draw() {
 
 
 function drawBoxes(){
-  background(0);
+  background(255);
   //p1.x = map(mouseX, 0, width, -400, 400);
   //p1.y = map(mouseY, 0, height, -400, 400);
   p1.x = mouseX;
   p1.y = mouseY;
   p1.z = -400;
 
-  var boxSize = width / 25;
+  var boxSize = width / 30;
   var stepSize = boxSize * 1.75;
 
   translate(width/2 + boxSize/2, height/2 + boxSize/2);
 
   push();
-  pointLight(100, 100, 100, p1.x, p1.y, p1.z);
+  pointLight(200, 200, 200, p1.x, p1.y, p1.z);
   pop();
-
-/*
-  push();
-  translate(-width/2 - 100,-height/2,0);
-  rotateX(-pitch);
-  rotateY(yaw);
-  //fill(0,255,0);
-  ambientMaterial(250);
-  box(100);
-  pop();
-*/
 
   
-  for(var x = 0; x < width - boxSize/2; x+=stepSize){
-    for(var y = 0; y < height - boxSize/2; y+= stepSize){
+  for(var x = 100; x < width - boxSize/2 - 100; x+=stepSize){
+    for(var y = 100; y < height - boxSize/2 - 100; y+= stepSize){
 
       var tempP2 = createVector(x, y,100);
       //dir = p5.Vector.sub(p2, p1);
@@ -68,7 +55,7 @@ function drawBoxes(){
       rotateX(-pitch);
       rotateY(yaw);
       
-      normalMaterial();
+      //normalMaterial();
 
       box(boxSize);
       pop();
