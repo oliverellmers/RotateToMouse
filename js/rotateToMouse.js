@@ -57,7 +57,7 @@ function drawBoxes(){
       
       //normalMaterial();
 
-      box(boxSize/2);
+      box(boxSize);
       pop();
     }
 
