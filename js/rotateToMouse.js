@@ -35,12 +35,12 @@ function drawBoxes(){
   translate(width/2 + boxSize/2, height/2 + boxSize/2);
 
   push();
-  pointLight(200, 200, 200, p1.x, p1.y, p1.z);
+  pointLight(200, 200, 200, p1.x, -p1.y + height/2, p1.z);
   pop();
 
   
-  for(var x = 100; x < width - boxSize/2 - 100; x+=stepSize){
-    for(var y = 100; y < height - boxSize/2 - 100; y+= stepSize){
+  for(var x = 50; x < width - boxSize/2 - 100; x+=stepSize){
+    for(var y = 50; y < height - boxSize/2 - 100; y+= stepSize){
 
       var tempP2 = createVector(x, y,100);
       //dir = p5.Vector.sub(p2, p1);
@@ -57,7 +57,8 @@ function drawBoxes(){
       
       //normalMaterial();
 
-      box(boxSize);
+      //box(boxSize);
+      sphere(boxSize * 0.5);
       pop();
     }
 
