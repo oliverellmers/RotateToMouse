@@ -25,8 +25,8 @@ function drawBoxes(){
   background(255);
   //p1.x = map(mouseX, 0, width, -400, 400);
   //p1.y = map(mouseY, 0, height, -400, 400);
-  p1.x = mouseX;
-  p1.y = mouseY;
+  p1.x = winMouseX;
+  p1.y = winMouseY;
   p1.z = -400;
 
   var boxSize = width / 30;
@@ -57,7 +57,7 @@ function drawBoxes(){
       
       //normalMaterial();
 
-      box(boxSize);
+      box(boxSize/2);
       pop();
     }
 
